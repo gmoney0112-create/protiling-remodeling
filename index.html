@@ -3,378 +3,406 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pro Tiling & Remodeling | San Antonio's Premier Tile Specialists</title>
-<meta name="description" content="San Antonio's premier tile installation & remodeling specialists. Licensed, insured, 5-year warranty. Free on-site estimates.">
+<title>Pro Tiling &amp; Remodeling | San Antonio's Premier Tile Specialists</title>
+<meta name="description" content="San Antonio's premier tile installation &amp; remodeling specialists. Licensed, insured, 5-year warranty. Free on-site estimates.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:#050810;color:#f8fafc;overflow-x:hidden;line-height:1.6}
 
-/* AURORA ANIMATION */
+/* ── AURORA ── */
 @keyframes aurora1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(80px,-60px) scale(1.15)}66%{transform:translate(-40px,80px) scale(0.92)}}
 @keyframes aurora2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-70px,50px) scale(1.1)}66%{transform:translate(90px,-70px) scale(1.05)}}
 @keyframes aurora3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,60px) scale(1.08)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-@keyframes tileIn{from{opacity:0;transform:scale(0.6)}to{opacity:1;transform:scale(1)}}
-@keyframes countUp{from{opacity:0}to{opacity:1}}
+@keyframes tileIn{from{opacity:0;transform:scale(0.5) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
 @keyframes dashDraw{from{stroke-dashoffset:300}to{stroke-dashoffset:0}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes rotateSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes borderGlow{0%,100%{border-color:rgba(34,197,94,0.3)}50%{border-color:rgba(34,197,94,0.8)}}
 
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0a0f1e}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.35}
-.blob1{width:600px;height:600px;background:radial-gradient(circle,#1e40af,transparent 70%);top:-10%;left:-10%;animation:aurora1 14s ease-in-out infinite}
-.blob2{width:500px;height:500px;background:radial-gradient(circle,#0f766e,transparent 70%);bottom:-10%;right:10%;animation:aurora2 12s ease-in-out infinite}
-.blob3{width:400px;height:400px;background:radial-gradient(circle,#c4a882,transparent 70%);top:40%;left:40%;animation:aurora3 10s ease-in-out infinite;opacity:0.15}
-.hero-noise{position:absolute;inset:0;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
-.hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px 32px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.hero-left{}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);border-radius:100px;padding:6px 16px;font-size:13px;color:#4ade80;margin-bottom:24px;animation:fadeUp 0.6s ease both}
-.hero-badge-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
-.hero-h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px;animation:fadeUp 0.7s 0.1s ease both}
-.hero-h1 em{font-style:italic;background:linear-gradient(135deg,#22c55e,#4ade80,#86efac);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.15rem;color:rgba(255,255,255,0.65);max-width:480px;margin-bottom:36px;animation:fadeUp 0.7s 0.2s ease both;font-weight:300}
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:44px;animation:fadeUp 0.7s 0.3s ease both}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;position:relative;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(34,197,94,0.35)}
-.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:skewX(-20deg);transition:left 0.5s ease}
-.btn-primary:hover::after{left:150%}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(34,197,94,0.45)}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);color:#f8fafc;font-weight:500;font-size:15px;padding:14px 28px;border-radius:10px;text-decoration:none;cursor:pointer;transition:all 0.2s;backdrop-filter:blur(8px)}
-.btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.3);transform:translateY(-2px)}
-.hero-trust{display:flex;flex-wrap:wrap;gap:20px;animation:fadeUp 0.7s 0.4s ease both}
-.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.55)}
-.trust-item svg{color:#22c55e}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
 
-/* TILE GRID */
-.hero-right{display:flex;justify-content:center;align-items:center}
-.tile-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;max-width:400px;width:100%}
-.tile-sq{border-radius:4px;aspect-ratio:1;opacity:0;animation:tileIn 0.4s ease forwards}
-.tile-sq:nth-child(8n+1){background:linear-gradient(135deg,#1e3a5f,#2563eb)}
-.tile-sq:nth-child(8n+2){background:linear-gradient(135deg,#1e293b,#334155)}
-.tile-sq:nth-child(8n+3){background:linear-gradient(135deg,#c4a882,#d4856a)}
-.tile-sq:nth-child(8n+4){background:linear-gradient(135deg,#0f4c75,#1b6ca8)}
-.tile-sq:nth-child(8n+5){background:linear-gradient(135deg,#2d3748,#4a5568)}
-.tile-sq:nth-child(8n+6){background:linear-gradient(135deg,#744210,#a16207)}
-.tile-sq:nth-child(8n+7){background:linear-gradient(135deg,#0f766e,#0d9488)}
-.tile-sq:nth-child(8n+8){background:linear-gradient(135deg,#374151,#6b7280)}
+/* ── GLASS UTILS ── */
+.glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10)}
+.glass-strong{background:rgba(255,255,255,0.08);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.14)}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,8,16,0.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);transition:all 0.3s}
-.nav-logo{font-weight:700;font-size:18px;color:#f8fafc;text-decoration:none}
-.nav-logo span{color:#22c55e}
-.nav-links{display:flex;gap:32px}
-.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
-.nav-links a:hover{color:#22c55e}
-.nav-cta{display:flex;gap:12px;align-items:center}
-.nav-phone{color:rgba(255,255,255,0.65);font-size:14px;text-decoration:none;font-weight:500}
-.nav-phone:hover{color:#22c55e}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,8,16,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);transition:all 0.3s}
+.nav-logo{display:flex;align-items:center;gap:0.75rem}
+.nav-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-logo-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-logo-text{font-size:1rem;font-weight:700;letter-spacing:-0.01em}
+.nav-logo-text span{color:#22c55e}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#f8fafc}
+.nav-cta{background:#22c55e;color:#050810!important;padding:0.5rem 1.25rem;border-radius:8px;font-weight:600!important;transition:all 0.2s!important}
+.nav-cta:hover{background:#16a34a;transform:translateY(-1px)}
+.nav-phone{color:rgba(255,255,255,0.6);font-size:0.8rem;display:flex;align-items:center;gap:0.4rem}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:#f8fafc;border-radius:2px;transition:all 0.3s}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}}
 
-/* STATS BAR */
-.stats-bar{background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:32px 32px}
-.stats-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:24px}
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0a0f1e;padding-top:70px}
+.hero-aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.aurora-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.35}
+.aurora-blob-1{width:700px;height:700px;background:radial-gradient(circle,#1e40af 0%,transparent 70%);top:-200px;left:-150px;animation:aurora1 14s ease-in-out infinite}
+.aurora-blob-2{width:600px;height:600px;background:radial-gradient(circle,#0f766e 0%,transparent 70%);top:100px;right:-100px;animation:aurora2 12s ease-in-out infinite}
+.aurora-blob-3{width:500px;height:500px;background:radial-gradient(circle,#7c3aed 0%,transparent 70%);bottom:-100px;left:40%;animation:aurora3 16s ease-in-out infinite;opacity:0.18}
+.aurora-blob-4{width:400px;height:400px;background:radial-gradient(circle,#c4a882 0%,transparent 70%);bottom:50px;right:200px;animation:aurora1 18s ease-in-out infinite reverse;opacity:0.12}
+
+.hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:3rem;text-align:center}}
+
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#22c55e;padding:0.35rem 0.9rem;border-radius:999px;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}
+.hero-badge::before{content:'';width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2s ease-in-out infinite}
+
+.hero-h1{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;animation:fadeUp 0.7s ease 0.1s both}
+.hero-h1 em{font-style:italic;background:linear-gradient(90deg,#22c55e,#4ade80,#22c55e);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite}
+
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,0.65);max-width:520px;margin-bottom:2.5rem;font-weight:400;line-height:1.7;animation:fadeUp 0.7s ease 0.2s both}
+@media(max-width:900px){.hero-sub{margin:0 auto 2.5rem}}
+
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fadeUp 0.7s ease 0.3s both}
+@media(max-width:900px){.hero-ctas{justify-content:center}}
+
+.btn-primary{position:relative;overflow:hidden;background:#22c55e;color:#050810;padding:0.875rem 2rem;border-radius:10px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;border:none;cursor:pointer;letter-spacing:-0.01em}
+.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.4s}
+.btn-primary:hover::after{left:100%}
+.btn-primary:hover{background:#16a34a;transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,197,94,0.35)}
+
+.btn-ghost{position:relative;overflow:hidden;background:rgba(255,255,255,0.07);color:#f8fafc;padding:0.875rem 2rem;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;border:1px solid rgba(255,255,255,0.15);cursor:pointer}
+.btn-ghost:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);transform:translateY(-2px)}
+
+.hero-trust{display:flex;flex-wrap:wrap;gap:1rem;animation:fadeUp 0.7s ease 0.4s both}
+@media(max-width:900px){.hero-trust{justify-content:center}}
+.trust-item{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:rgba(255,255,255,0.55);font-weight:500}
+.trust-item svg{width:14px;height:14px;stroke:#22c55e;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ── TILE MOSAIC ── */
+.hero-right{position:relative;display:flex;flex-direction:column;gap:1.5rem;animation:fadeUp 0.8s ease 0.2s both}
+@media(max-width:900px){.hero-right{align-items:center}}
+.tile-mosaic{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;width:100%}
+.tile-sq{border-radius:6px;aspect-ratio:1;opacity:0;animation:tileIn 0.4s ease forwards}
+.tile-sq:nth-child(6n+1){background:linear-gradient(135deg,#1e3a5f,#1e40af)}
+.tile-sq:nth-child(6n+2){background:linear-gradient(135deg,#0f3d38,#0f766e)}
+.tile-sq:nth-child(6n+3){background:linear-gradient(135deg,#4a2c1a,#d4856a)}
+.tile-sq:nth-child(6n+4){background:linear-gradient(135deg,#3d2c1a,#c4a882)}
+.tile-sq:nth-child(6n+5){background:linear-gradient(135deg,#1a1a3d,#4c1d95)}
+.tile-sq:nth-child(6n+0){background:linear-gradient(135deg,#1a3a2c,#22c55e)}
+
+.hero-portfolio-card{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.portfolio-card-header{display:flex;justify-content:space-between;align-items:center}
+.portfolio-card-header span{font-size:0.75rem;color:rgba(255,255,255,0.5);font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.portfolio-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.portfolio-mini-item{border-radius:8px;height:60px}
+.portfolio-mini-item:nth-child(1){background:linear-gradient(135deg,#1e3a5f,#0f766e)}
+.portfolio-mini-item:nth-child(2){background:linear-gradient(135deg,#4a2c1a,#c4a882)}
+.portfolio-mini-item:nth-child(3){background:linear-gradient(135deg,#1a1a3d,#d4856a)}
+.portfolio-card-stat{display:flex;justify-content:space-around}
+.p-stat{text-align:center}
+.p-stat-num{font-size:1.5rem;font-weight:700;color:#22c55e;line-height:1}
+.p-stat-lbl{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:2px}
+
+/* ── STATS BAR ── */
+.stats-bar{background:rgba(255,255,255,0.04);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);padding:1.75rem 2rem}
+.stats-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:2rem}
 .stat-item{text-align:center}
-.stat-num{font-size:2.2rem;font-weight:700;color:#f8fafc;line-height:1;display:block}
+.stat-num{font-size:2rem;font-weight:700;color:#f8fafc;letter-spacing:-0.03em;display:block}
 .stat-num span{color:#22c55e}
-.stat-label{font-size:12px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;display:block}
-.stat-divider{width:1px;height:48px;background:rgba(255,255,255,0.1)}
+.stat-lbl{font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
 
-/* SECTION COMMONS */
-section{padding:100px 32px}
+/* ── SECTION HEADERS ── */
+.section-label{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#22c55e;margin-bottom:0.75rem}
+.section-h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;line-height:1.15;margin-bottom:1rem}
+.section-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);max-width:560px;line-height:1.7}
+
+section{padding:6rem 2rem}
 .section-inner{max-width:1280px;margin:0 auto}
-.section-label{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#22c55e;margin-bottom:12px}
-.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px}
-.section-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);max-width:560px;font-weight:300}
-.section-header{margin-bottom:56px}
 
-/* GLASS CARD */
-.glass{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px);border-radius:16px}
-.glass:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.14);transform:translateY(-4px);box-shadow:0 24px 64px rgba(0,0,0,0.4)}
-.glass{transition:all 0.3s ease}
+/* ── PORTFOLIO ── */
+.portfolio-section{background:#050810}
+.portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:1000px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.portfolio-grid{grid-template-columns:1fr}}
 
-/* PORTFOLIO */
-.portfolio-section{background:#070c19}
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.portfolio-card{border-radius:16px;overflow:hidden;position:relative;cursor:pointer;group}
-.portfolio-card:nth-child(1){grid-row:span 2}
-.portfolio-img{width:100%;height:100%;min-height:220px;position:relative;overflow:hidden}
-.portfolio-card:nth-child(1) .portfolio-img{min-height:460px}
-.portfolio-gradient{width:100%;height:100%;position:absolute;inset:0;transition:transform 0.5s ease}
-.portfolio-card:hover .portfolio-gradient{transform:scale(1.05)}
-.g1{background:linear-gradient(135deg,#1a3a5c 0%,#2d6a9f 40%,#c4a882 100%)}
-.g2{background:linear-gradient(135deg,#2c1810 0%,#8b4513 50%,#d4856a 100%)}
-.g3{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)}
-.g4{background:linear-gradient(135deg,#2d3016 0%,#556b2f 60%,#8fbc8f 100%)}
-.g5{background:linear-gradient(135deg,#3d1515 0%,#8b2020 50%,#d4756a 100%)}
-.g6{background:linear-gradient(135deg,#1a2a1a 0%,#2d4a2d 60%,#6b9e6b 100%)}
-.portfolio-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,16,0.95) 0%,rgba(5,8,16,0.2) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;opacity:1;transition:all 0.3s}
-.portfolio-card:hover .portfolio-view{opacity:1;transform:translateY(0)}
-.portfolio-view{display:inline-flex;align-items:center;gap:8px;color:#22c55e;font-size:14px;font-weight:600;opacity:0;transform:translateY(8px);transition:all 0.3s;margin-bottom:12px}
-.portfolio-title{font-size:1.05rem;font-weight:600;color:#f8fafc;margin-bottom:4px}
-.portfolio-meta{font-size:12px;color:rgba(255,255,255,0.45)}
-.portfolio-stars{color:#fbbf24;font-size:11px;margin-top:4px}
+.portfolio-card{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;transition:transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.35s}
+.portfolio-card:nth-child(1) .pc-bg{background:linear-gradient(145deg,#1e3a5f 0%,#0f766e 50%,#c4a882 100%)}
+.portfolio-card:nth-child(2) .pc-bg{background:linear-gradient(145deg,#2d1b4e 0%,#1e3a5f 50%,#0f766e 100%)}
+.portfolio-card:nth-child(3) .pc-bg{background:linear-gradient(145deg,#4a2c1a 0%,#d4856a 60%,#c4a882 100%)}
+.portfolio-card:nth-child(4) .pc-bg{background:linear-gradient(145deg,#0d2137 0%,#1a3d3a 50%,#0f766e 100%)}
+.portfolio-card:nth-child(5) .pc-bg{background:linear-gradient(145deg,#1f1505 0%,#4a2c1a 50%,#d4856a 100%)}
+.portfolio-card:nth-child(6) .pc-bg{background:linear-gradient(145deg,#0a1628 0%,#1e293b 60%,#374151 100%)}
+.pc-bg{position:absolute;inset:0;transition:transform 0.5s}
+.portfolio-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.5)}
+.portfolio-card:hover .pc-bg{transform:scale(1.06)}
+.pc-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.03) 0,rgba(255,255,255,0.03) 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.pc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,16,0.85) 0%,rgba(5,8,16,0.1) 60%,transparent 100%);transition:background 0.3s}
+.portfolio-card:hover .pc-overlay{background:linear-gradient(to top,rgba(5,8,16,0.92) 0%,rgba(5,8,16,0.4) 60%,rgba(34,197,94,0.05) 100%)}
+.pc-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem}
+.pc-title{font-size:1.05rem;font-weight:700;margin-bottom:0.35rem;letter-spacing:-0.01em}
+.pc-meta{font-size:0.75rem;color:rgba(255,255,255,0.5);display:flex;gap:0.75rem;align-items:center}
+.pc-meta span{display:flex;align-items:center;gap:0.25rem}
+.pc-cta{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.8);opacity:0;background:rgba(34,197,94,0.9);color:#050810;padding:0.6rem 1.25rem;border-radius:8px;font-weight:700;font-size:0.85rem;transition:all 0.3s;white-space:nowrap}
+.portfolio-card:hover .pc-cta{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.pc-stars{color:#22c55e;font-size:0.7rem}
 
-/* SERVICES BENTO */
-.services-section{background:#0a0f1e}
-.bento-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;grid-auto-rows:auto}
-.bento-large{grid-column:span 2;background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(14,159,110,0.05));border:1px solid rgba(34,197,94,0.2);border-radius:20px;padding:40px;position:relative;overflow:hidden;transition:all 0.3s}
-.bento-large::before{content:'';position:absolute;top:-40%;right:-10%;width:300px;height:300px;background:radial-gradient(circle,rgba(34,197,94,0.12),transparent 70%);pointer-events:none}
-.bento-large:hover{transform:translateY(-4px);box-shadow:0 24px 64px rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.35)}
-.bento-small{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px;position:relative;overflow:hidden;transition:all 0.3s;border-top:2px solid transparent}
-.bento-small:hover{background:rgba(255,255,255,0.07);border-top-color:#22c55e;transform:scale(1.02);box-shadow:0 16px 48px rgba(0,0,0,0.4)}
-.service-icon{width:48px;height:48px;background:rgba(34,197,94,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#22c55e}
-.bento-large .service-icon{width:60px;height:60px;border-radius:16px;margin-bottom:24px}
-.service-name{font-size:1.15rem;font-weight:700;margin-bottom:8px;color:#f8fafc}
-.bento-large .service-name{font-size:1.5rem;margin-bottom:12px}
-.service-desc{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.6;font-weight:300}
-.bento-large .service-desc{font-size:1rem;max-width:400px}
-.service-tag{display:inline-block;margin-top:16px;font-size:12px;color:#22c55e;font-weight:600;letter-spacing:0.05em}
+/* ── SERVICES BENTO ── */
+.services-section{background:#080d1a}
+.bento-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1.25rem;margin-top:3rem}
+@media(max-width:900px){.bento-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.bento-grid{grid-template-columns:1fr}}
 
-/* WHY US */
-.why-section{background:#060a16}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.why-left{}
-.warranty-badge{display:flex;flex-direction:column;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(34,197,94,0.05));border:1px solid rgba(34,197,94,0.25);border-radius:24px;padding:48px;text-align:center;margin-bottom:32px;position:relative;overflow:hidden}
-.warranty-badge::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#22c55e,transparent)}
-.warranty-icon{color:#22c55e;opacity:0.9}
-.warranty-title{font-size:1.8rem;font-weight:700;color:#f8fafc}
-.warranty-sub{font-size:0.95rem;color:rgba(255,255,255,0.5)}
-.why-points{display:flex;flex-direction:column;gap:16px}
-.why-point{display:flex;gap:16px;align-items:flex-start;padding:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;transition:all 0.25s}
-.why-point:hover{background:rgba(255,255,255,0.06);border-color:rgba(34,197,94,0.2)}
-.why-icon{width:40px;height:40px;background:rgba(34,197,94,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#22c55e;flex-shrink:0}
-.why-text h4{font-size:0.95rem;font-weight:600;margin-bottom:4px}
-.why-text p{font-size:0.85rem;color:rgba(255,255,255,0.5)}
-.why-right{}
-.why-title{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.15;margin-bottom:16px}
-.why-sub{font-size:1rem;color:rgba(255,255,255,0.55);margin-bottom:40px;line-height:1.7;font-weight:300}
-.why-numbers{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.why-num-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;text-align:center}
-.why-num-val{font-size:2.2rem;font-weight:700;color:#22c55e;line-height:1}
-.why-num-label{font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;text-transform:uppercase;letter-spacing:0.06em}
+.bento-card{border-radius:16px;padding:2rem;transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);position:relative;overflow:hidden;border-top:2px solid transparent;background:rgba(255,255,255,0.05);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.09)}
+.bento-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#22c55e,#16a34a);transform:scaleX(0);transform-origin:left;transition:transform 0.35s}
+.bento-card:hover::before{transform:scaleX(1)}
+.bento-card:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 16px 50px rgba(0,0,0,0.4);border-color:rgba(255,255,255,0.15)}
+.bento-large{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;background:linear-gradient(135deg,rgba(30,58,95,0.5),rgba(15,118,110,0.3));border-color:rgba(255,255,255,0.12)}
+@media(max-width:900px){.bento-large{grid-column:span 2}}
+@media(max-width:580px){.bento-large{grid-column:span 1;grid-template-columns:1fr}}
 
-/* HOW IT WORKS */
-.how-section{background:#0a0f1e}
-.steps-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;position:relative;margin-top:64px}
-.step-connector{position:absolute;top:56px;left:calc(16.67%);width:calc(66.67%);height:2px;z-index:0}
-.step-connector-line{stroke:#22c55e;stroke-width:2;stroke-dasharray:8 6;animation:dashDraw 2s ease forwards;stroke-dashoffset:300;opacity:0.5}
-.step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px;position:relative;z-index:1}
-.step-num{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#22c55e);display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:28px;box-shadow:0 8px 32px rgba(34,197,94,0.3)}
-.step-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;width:100%}
-.step-title{font-size:1.05rem;font-weight:700;margin-bottom:10px}
-.step-desc{font-size:0.9rem;color:rgba(255,255,255,0.5);line-height:1.6;font-weight:300}
+.bento-icon{width:48px;height:48px;background:rgba(34,197,94,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;border:1px solid rgba(34,197,94,0.2)}
+.bento-icon svg{width:24px;height:24px;stroke:#22c55e;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bento-h3{font-size:1.2rem;font-weight:700;margin-bottom:0.6rem;letter-spacing:-0.02em}
+.bento-large .bento-h3{font-size:1.6rem}
+.bento-p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.65}
+.bento-large .bento-p{font-size:1rem;color:rgba(255,255,255,0.6)}
+.bento-price{display:inline-block;margin-top:1rem;font-size:0.8rem;color:#22c55e;font-weight:600;background:rgba(34,197,94,0.1);padding:0.25rem 0.75rem;border-radius:999px;border:1px solid rgba(34,197,94,0.2)}
 
-/* REVIEWS */
-.reviews-section{background:#060a16}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.review-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px;transition:all 0.3s}
-.review-card:hover{background:rgba(255,255,255,0.07);transform:translateY(-4px);box-shadow:0 24px 48px rgba(0,0,0,0.4)}
-.review-stars{display:flex;gap:3px;margin-bottom:16px}
-.review-stars svg{color:#fbbf24}
-.review-text{font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:20px;font-style:italic;font-weight:300}
-.review-author{display:flex;align-items:center;gap:12px}
-.review-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
-.review-name{font-weight:600;font-size:0.9rem}
-.review-loc{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px}
+.bento-large-visual{border-radius:12px;height:180px;background:linear-gradient(135deg,#0f3d38,#1e3a5f,#0f766e);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.bento-large-visual::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.04) 0,rgba(255,255,255,0.04) 1px,transparent 0,transparent 50%);background-size:16px 16px}
+.bento-large-visual-icon{width:64px;height:64px;position:relative;z-index:1}
+.bento-large-visual-icon svg{width:64px;height:64px;stroke:rgba(255,255,255,0.3);fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
 
-/* PRICING */
-.pricing-section{background:#0a0f1e}
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-.pricing-table{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden}
-.pricing-header{padding:24px 28px;background:rgba(34,197,94,0.08);border-bottom:1px solid rgba(255,255,255,0.08)}
-.pricing-header h3{font-size:1.1rem;font-weight:700}
-.pricing-header p{font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px}
-.pricing-row{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;border-bottom:1px solid rgba(255,255,255,0.05)}
+/* ── WHY US ── */
+.whyus-section{background:#050810}
+.whyus-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
+@media(max-width:800px){.whyus-grid{grid-template-columns:1fr}}
+.whyus-warranty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem}
+.warranty-badge{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(22,163,74,0.08));border:2px solid rgba(34,197,94,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:borderGlow 3s ease-in-out infinite,floatUp 4s ease-in-out infinite;position:relative}
+.warranty-badge::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(34,197,94,0.1)}
+.warranty-badge svg{width:48px;height:48px;stroke:#22c55e;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:0.5rem}
+.warranty-num{font-size:2.2rem;font-weight:700;color:#22c55e;line-height:1}
+.warranty-txt{font-size:0.75rem;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.05em;text-transform:uppercase}
+.warranty-desc{font-size:1.1rem;color:rgba(255,255,255,0.55);line-height:1.7;max-width:320px}
+
+.whyus-list{display:flex;flex-direction:column;gap:1.25rem}
+.why-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);transition:all 0.3s}
+.why-item:hover{background:rgba(255,255,255,0.07);border-color:rgba(34,197,94,0.2);transform:translateX(4px)}
+.why-icon{width:42px;height:42px;background:rgba(34,197,94,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(34,197,94,0.15)}
+.why-icon svg{width:20px;height:20px;stroke:#22c55e;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.why-content h4{font-size:0.95rem;font-weight:700;margin-bottom:0.2rem}
+.why-content p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.5}
+
+/* ── HOW IT WORKS ── */
+.howitworks-section{background:#080d1a}
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;position:relative}
+@media(max-width:700px){.steps-row{grid-template-columns:1fr}}
+.steps-connector{position:absolute;top:38px;left:calc(16.6% + 2rem);right:calc(16.6% + 2rem);height:2px;pointer-events:none}
+@media(max-width:700px){.steps-connector{display:none}}
+.step-line{stroke:rgba(34,197,94,0.3);stroke-width:2;stroke-dasharray:8 4;animation:dashDraw 2s ease forwards;width:100%;height:2px}
+.step-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);text-align:center;transition:all 0.3s}
+.step-card:hover{transform:translateY(-4px);border-color:rgba(34,197,94,0.2);background:rgba(255,255,255,0.08)}
+.step-num{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#22c55e,#16a34a);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.6rem;font-weight:700;color:#050810;box-shadow:0 8px 24px rgba(34,197,94,0.3)}
+.step-h3{font-size:1.1rem;font-weight:700;margin-bottom:0.6rem}
+.step-p{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.65}
+
+/* ── REVIEWS ── */
+.reviews-section{background:#050810}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+@media(max-width:900px){.reviews-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.reviews-grid{grid-template-columns:1fr}}
+.review-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);transition:all 0.3s;display:flex;flex-direction:column;gap:1rem}
+.review-card:hover{transform:translateY(-4px);border-color:rgba(34,197,94,0.2);background:rgba(255,255,255,0.08)}
+.review-stars{display:flex;gap:3px}
+.review-stars svg{width:16px;height:16px;fill:#22c55e;stroke:none}
+.review-text{font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.7;font-style:italic}
+.review-author{display:flex;align-items:center;gap:0.85rem;margin-top:auto}
+.review-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;flex-shrink:0}
+.review-avatar.av1{background:linear-gradient(135deg,#1e3a5f,#0f766e)}
+.review-avatar.av2{background:linear-gradient(135deg,#4c1d95,#1e3a5f)}
+.review-avatar.av3{background:linear-gradient(135deg,#4a2c1a,#d4856a)}
+.review-name{font-weight:700;font-size:0.9rem;margin-bottom:0.1rem}
+.review-hood{font-size:0.75rem;color:rgba(255,255,255,0.4)}
+
+/* ── PRICING ── */
+.pricing-section{background:#080d1a}
+.pricing-table{margin-top:3rem;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.09)}
+.pricing-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06)}
 .pricing-row:last-child{border-bottom:none}
-.pricing-row:hover{background:rgba(255,255,255,0.03)}
-.pricing-service{font-size:0.9rem;font-weight:500}
-.pricing-range{font-size:0.9rem;color:#22c55e;font-weight:600}
-.pricing-right{display:flex;flex-direction:column;gap:24px}
-.estimate-card{background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(34,197,94,0.05));border:1px solid rgba(34,197,94,0.25);border-radius:20px;padding:36px;text-align:center}
-.estimate-icon{color:#22c55e;margin:0 auto 16px;display:block}
-.estimate-title{font-size:1.3rem;font-weight:700;margin-bottom:8px}
-.estimate-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);margin-bottom:24px;line-height:1.6}
-.pricing-note{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:20px 24px}
-.pricing-note p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6}
-.pricing-note strong{color:rgba(255,255,255,0.7)}
+.pricing-row:nth-child(even){background:rgba(255,255,255,0.03)}
+.pricing-row.header{background:rgba(34,197,94,0.08);border-bottom:1px solid rgba(34,197,94,0.2)}
+.pricing-row.header span{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5)}
+.pricing-service{font-weight:600;font-size:0.95rem}
+.pricing-service-desc{font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:0.15rem}
+.pricing-price{font-size:1.1rem;font-weight:700;color:#22c55e;white-space:nowrap}
+.pricing-cta-row{background:rgba(34,197,94,0.08);border-top:1px solid rgba(34,197,94,0.2);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.pricing-cta-text{font-size:0.9rem;color:rgba(255,255,255,0.6)}
+.pricing-cta-text strong{color:#f8fafc}
 
-/* CTA SECTION */
-.cta-section{position:relative;overflow:hidden;padding:120px 32px;background:#0a0f1e;text-align:center}
-.cta-blob1{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(34,197,94,0.12),transparent 70%);top:-100px;left:50%;transform:translateX(-50%);pointer-events:none}
-.cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
-.cta-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;margin-bottom:20px}
-.cta-title em{font-style:italic;color:#22c55e}
-.cta-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:40px;font-weight:300}
-.cta-phone{display:block;font-size:1.4rem;font-weight:700;color:#22c55e;text-decoration:none;margin-top:24px;transition:opacity 0.2s}
-.cta-phone:hover{opacity:0.8}
-.cta-legal{font-size:12px;color:rgba(255,255,255,0.25);margin-top:20px}
+/* ── CTA SECTION ── */
+.cta-section{position:relative;overflow:hidden;background:#0a0f1e;text-align:center;padding:7rem 2rem}
+.cta-aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.cta-blob-1{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(34,197,94,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:rotateSlow 20s linear infinite}
+.cta-blob-2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(30,58,95,0.3) 0%,transparent 70%);top:-50px;right:-100px;animation:aurora2 12s ease-in-out infinite}
+.cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+.cta-h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.15}
+.cta-h2 em{font-style:italic;color:#22c55e}
+.cta-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:2.5rem;line-height:1.7}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.cta-phone{display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.7);font-size:1.05rem;font-weight:600;text-decoration:none;transition:color 0.2s}
+.cta-phone:hover{color:#22c55e}
+.cta-phone svg{width:18px;height:18px;stroke:#22c55e;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* FOOTER */
-footer{background:#050810;border-top:1px solid rgba(255,255,255,0.06);padding:72px 32px 32px}
+/* ── FOOTER ── */
+footer{background:#050810;border-top:1px solid rgba(255,255,255,0.07);padding:4rem 2rem 2rem}
 .footer-inner{max-width:1280px;margin:0 auto}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
-.footer-logo{font-weight:700;font-size:20px;color:#f8fafc;margin-bottom:12px}
-.footer-logo span{color:#22c55e}
-.footer-tagline{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:260px;font-weight:300}
-.footer-contact{margin-top:20px;display:flex;flex-direction:column;gap:8px}
-.footer-contact a{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
-.footer-contact a:hover{color:#22c55e}
-.footer-col h4{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:20px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-col ul li a{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;font-weight:300}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:580px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand p{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:1rem;max-width:260px}
+.footer-col h4{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-col ul li a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
 .footer-col ul li a:hover{color:#22c55e}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.footer-copy{font-size:13px;color:rgba(255,255,255,0.3)}
-.footer-badge{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.3)}
-.footer-badge-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+.footer-contact-item{display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem}
+.footer-contact-item svg{width:14px;height:14px;stroke:#22c55e;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.25)}
+.footer-badges{display:flex;gap:0.75rem;flex-wrap:wrap}
+.footer-badge{font-size:0.7rem;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:0.25rem 0.6rem;border-radius:999px}
 
-/* MODAL */
-.modal-backdrop{position:fixed;inset:0;background:rgba(5,8,16,0.92);backdrop-filter:blur(12px);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px}
-.modal-backdrop.open{display:flex}
-.modal{background:rgba(15,23,42,0.97);border:1px solid rgba(255,255,255,0.1);border-radius:24px;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 40px 100px rgba(0,0,0,0.6)}
-.modal-header{padding:28px 32px 0;display:flex;justify-content:space-between;align-items:flex-start}
-.modal-title{font-size:1.35rem;font-weight:700}
-.modal-sub{font-size:14px;color:rgba(255,255,255,0.5);margin-top:4px}
-.modal-close{background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.6);width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
-.modal-close:hover{background:rgba(255,255,255,0.15);color:#f8fafc}
-.modal-body{padding:28px 32px 32px}
-.modal-steps{display:flex;gap:8px;margin-bottom:28px}
-.modal-step{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,0.1);transition:background 0.3s}
-.modal-step.active{background:#22c55e}
-.form-step{display:none}
-.form-step.active{display:block}
-.form-group{margin-bottom:20px}
-.form-group label{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,0.7);margin-bottom:8px}
-.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;color:#f8fafc;font-size:14px;font-family:inherit;transition:border-color 0.2s;resize:vertical}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:rgba(34,197,94,0.5);background:rgba(255,255,255,0.08)}
-.form-group select option{background:#0f172a}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.modal-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
-.honeypot{display:none !important;visibility:hidden}
-.form-success{text-align:center;padding:32px 0}
-.form-success-icon{width:72px;height:72px;background:rgba(34,197,94,0.15);border:2px solid rgba(34,197,94,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#22c55e}
-.form-success h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
-.form-success p{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.6}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+/* ── REVEAL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:0.1s}
 .reveal-delay-2{transition-delay:0.2s}
 .reveal-delay-3{transition-delay:0.3s}
 .reveal-delay-4{transition-delay:0.4s}
-.reveal-delay-5{transition-delay:0.5s}
 
-/* MOBILE */
-@media(max-width:1024px){
-.hero-inner{grid-template-columns:1fr;gap:48px}
-.hero-right{justify-content:flex-start}
-.tile-grid{max-width:320px}
-.why-grid{grid-template-columns:1fr}
-.footer-grid{grid-template-columns:1fr 1fr}
-.portfolio-grid{grid-template-columns:repeat(2,1fr)}
-.portfolio-card:nth-child(1){grid-row:auto}
-.portfolio-card:nth-child(1) .portfolio-img{min-height:220px}
-.reviews-grid{grid-template-columns:1fr}
-.pricing-grid{grid-template-columns:1fr}
-.bento-grid{grid-template-columns:1fr 1fr}
-.bento-large{grid-column:span 2}
-}
-@media(max-width:768px){
-nav .nav-links{display:none}
-nav .nav-cta .btn-primary{display:none}
-.hero-h1{font-size:2.2rem}
-.steps-row{grid-template-columns:1fr;gap:32px}
-.step-connector{display:none}
-.portfolio-grid{grid-template-columns:1fr}
-.bento-grid{grid-template-columns:1fr}
-.bento-large{grid-column:auto}
-.why-numbers{grid-template-columns:1fr 1fr}
-.footer-grid{grid-template-columns:1fr}
-.tile-grid{display:none}
-.stats-inner{gap:16px}
-.stat-divider{display:none}
-.reviews-grid{grid-template-columns:1fr}
-.form-row{grid-template-columns:1fr}
-.pricing-grid{grid-template-columns:1fr}
-}
-
-/* REDUCED MOTION */
-@media(prefers-reduced-motion:reduce){
-*{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
-}
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.35s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-bg{position:absolute;inset:0;background:rgba(5,8,16,0.85);backdrop-filter:blur(8px)}
+.modal-card{position:relative;z-index:1;background:#0a0f1e;border:1px solid rgba(255,255,255,0.12);border-radius:20px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:2.5rem;transform:translateY(20px) scale(0.97);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1)}
+.modal-overlay.open .modal-card{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;background:rgba(255,255,255,0.07);border:none;color:#f8fafc;width:34px;height:34px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;font-size:1.1rem}
+.modal-close:hover{background:rgba(255,255,255,0.14)}
+.modal-progress{display:flex;gap:0.5rem;margin-bottom:2rem}
+.modal-step-dot{flex:1;height:3px;border-radius:999px;background:rgba(255,255,255,0.1);transition:background 0.3s}
+.modal-step-dot.active{background:#22c55e}
+.modal-h2{font-size:1.5rem;font-weight:700;margin-bottom:0.4rem;letter-spacing:-0.02em}
+.modal-sub{font-size:0.875rem;color:rgba(255,255,255,0.5);margin-bottom:2rem}
+.form-field{margin-bottom:1.25rem}
+.form-label{display:block;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:0.4rem;letter-spacing:0.02em}
+.form-input,.form-select,.form-textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:#f8fafc;padding:0.75rem 1rem;font-size:0.9rem;font-family:'Inter',sans-serif;transition:border-color 0.2s,background 0.2s;outline:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:#22c55e;background:rgba(255,255,255,0.09)}
+.form-select option{background:#0a0f1e}
+.form-textarea{resize:vertical;min-height:90px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-check{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:rgba(255,255,255,0.5);cursor:pointer}
+.form-check input{margin-top:2px;accent-color:#22c55e}
+.form-honeypot{display:none}
+.modal-note{font-size:0.75rem;color:rgba(255,255,255,0.3);text-align:center;margin-top:1rem}
+.modal-success{text-align:center;padding:2rem 0}
+.modal-success svg{width:64px;height:64px;stroke:#22c55e;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin:0 auto 1rem;display:block}
+.modal-success h3{font-size:1.5rem;font-weight:700;margin-bottom:0.5rem}
+.modal-success p{font-size:0.9rem;color:rgba(255,255,255,0.5);line-height:1.7}
+.rate-limit-msg{color:#f87171;font-size:0.8rem;margin-top:0.5rem;display:none}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Pro<span>Tiling</span></a>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <div>
+      <div class="nav-logo-text">Pro Tiling &amp; <span>Remodeling</span></div>
+    </div>
+  </div>
   <div class="nav-links">
     <a href="#portfolio">Portfolio</a>
     <a href="#services">Services</a>
-    <a href="#process">Process</a>
+    <a href="#howitworks">Process</a>
     <a href="#reviews">Reviews</a>
     <a href="#pricing">Pricing</a>
+    <a href="#" class="nav-cta" onclick="openModal();return false;">Free Estimate</a>
   </div>
-  <div class="nav-cta">
-    <a href="tel:+12101234567" class="nav-phone">(210) 123-4567</a>
-    <button class="btn-primary" onclick="openModal()" style="padding:10px 20px;font-size:14px">Free Estimate</button>
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
+<!-- MOBILE MENU -->
+<div id="mobileMenu" style="display:none;position:fixed;top:70px;left:0;right:0;z-index:998;background:rgba(5,8,16,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);padding:1.5rem 2rem;flex-direction:column;gap:1.25rem">
+  <a href="#portfolio" onclick="closeMobileMenu()" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:1rem;font-weight:500;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">Portfolio</a>
+  <a href="#services" onclick="closeMobileMenu()" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:1rem;font-weight:500;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">Services</a>
+  <a href="#howitworks" onclick="closeMobileMenu()" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:1rem;font-weight:500;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">Process</a>
+  <a href="#reviews" onclick="closeMobileMenu()" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:1rem;font-weight:500;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">Reviews</a>
+  <a href="#pricing" onclick="closeMobileMenu()" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:1rem;font-weight:500;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">Pricing</a>
+  <a href="#" onclick="openModal();closeMobileMenu();return false;" class="btn-primary" style="text-align:center;justify-content:center">Free Estimate</a>
+</div>
+
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
-    <div class="hero-noise"></div>
+<section class="hero" id="home">
+  <div class="hero-aurora">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+    <div class="aurora-blob aurora-blob-3"></div>
+    <div class="aurora-blob aurora-blob-4"></div>
   </div>
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        San Antonio's #1 Rated Tile Specialists
-      </div>
+      <div class="hero-badge">San Antonio's Premier Tile Specialists</div>
       <h1 class="hero-h1">Craftsmanship That<br><em>Transforms</em> Spaces</h1>
-      <p class="hero-sub">San Antonio's premier tile installation &amp; remodeling specialists. Every project delivered with precision, artistry, and a 5-year warranty.</p>
+      <p class="hero-sub">From master bath renovations to commercial lobbies — we bring precision, artistry, and a 5-year warranty to every tile we set.</p>
       <div class="hero-ctas">
-        <button class="btn-primary" onclick="openModal()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Start Your Project
-        </button>
-        <a href="#portfolio" class="btn-outline">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 9 6 6m0-6-6 6"/></svg>
-          View Our Work
-        </a>
+        <a href="#" class="btn-primary" onclick="openModal();return false;">Start Your Project &rarr;</a>
+        <a href="#portfolio" class="btn-ghost">View Our Work</a>
       </div>
       <div class="hero-trust">
-        <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          5-Year Warranty
-        </div>
-        <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Licensed &amp; Insured
-        </div>
-        <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Same-Week Start
-        </div>
-        <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          Free On-Site Estimate
-        </div>
+        <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>5-Year Warranty</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Licensed &amp; Insured</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Free On-Site Estimate</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Same-Week Start Available</div>
       </div>
     </div>
     <div class="hero-right">
-      <div class="tile-grid" id="tileGrid"></div>
+      <div class="tile-mosaic" id="tileMosaic"></div>
+      <div class="hero-portfolio-card glass-strong">
+        <div class="portfolio-card-header">
+          <span>Recent Portfolio</span>
+          <div style="display:flex;gap:4px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#22c55e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#22c55e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#22c55e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#22c55e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#22c55e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
+        <div class="portfolio-mini-grid">
+          <div class="portfolio-mini-item"></div>
+          <div class="portfolio-mini-item"></div>
+          <div class="portfolio-mini-item"></div>
+        </div>
+        <div class="portfolio-card-stat">
+          <div class="p-stat"><div class="p-stat-num">800+</div><div class="p-stat-lbl">Projects</div></div>
+          <div class="p-stat"><div class="p-stat-num">4.9</div><div class="p-stat-lbl">Avg Rating</div></div>
+          <div class="p-stat"><div class="p-stat-num">12+</div><div class="p-stat-lbl">Years</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -383,28 +411,24 @@ nav .nav-cta .btn-primary{display:none}
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item">
-      <span class="stat-num" data-target="800"><span>0</span>+</span>
-      <span class="stat-label">Projects Completed</span>
+      <span class="stat-num" data-target="800" data-suffix="+"><span>0</span></span>
+      <div class="stat-lbl">Projects Completed</div>
     </div>
-    <div class="stat-divider"></div>
     <div class="stat-item">
-      <span class="stat-num">4.9<span style="color:#fbbf24">★</span></span>
-      <span class="stat-label">Average Rating</span>
+      <span class="stat-num" data-target="4.9" data-suffix="&#9733;" data-decimal="1"><span>0</span></span>
+      <div class="stat-lbl">Average Rating</div>
     </div>
-    <div class="stat-divider"></div>
     <div class="stat-item">
-      <span class="stat-num" data-target="12"><span>0</span>+</span>
-      <span class="stat-label">Years Experience</span>
+      <span class="stat-num" data-target="12" data-suffix="+"><span>0</span></span>
+      <div class="stat-lbl">Years Experience</div>
     </div>
-    <div class="stat-divider"></div>
     <div class="stat-item">
-      <span class="stat-num">5-Year</span>
-      <span class="stat-label">Warranty</span>
+      <span class="stat-num" style="color:#22c55e">5-Year</span>
+      <div class="stat-lbl">Warranty on All Work</div>
     </div>
-    <div class="stat-divider"></div>
     <div class="stat-item">
-      <span class="stat-num">100%</span>
-      <span class="stat-label">Satisfaction</span>
+      <span class="stat-num" data-target="100" data-suffix="%"><span>0</span></span>
+      <div class="stat-lbl">Satisfaction Guarantee</div>
     </div>
   </div>
 </div>
@@ -412,93 +436,96 @@ nav .nav-cta .btn-primary{display:none}
 <!-- PORTFOLIO -->
 <section class="portfolio-section" id="portfolio">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-label">Our Work</div>
-      <h2 class="section-title">Projects That Speak<br>For Themselves</h2>
-      <p class="section-sub">Every tile placed, every surface finished — a testament to our commitment to precision and beauty.</p>
+    <div class="portfolio-header">
+      <div>
+        <div class="section-label reveal">Our Work</div>
+        <h2 class="section-h2 reveal reveal-delay-1">Every Project, a Masterpiece</h2>
+        <p class="section-sub reveal reveal-delay-2">Explore our portfolio of premium tile installations and full-scope remodels across San Antonio.</p>
+      </div>
+      <a href="#" onclick="openModal();return false;" class="btn-primary reveal reveal-delay-2">Start Your Project &rarr;</a>
     </div>
     <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="pc-bg"></div>
+        <div class="pc-pattern"></div>
+        <div class="pc-overlay"></div>
+        <div class="pc-cta">View Project &rarr;</div>
+        <div class="pc-content">
+          <div class="pc-title">Master Bath Remodel</div>
+          <div class="pc-meta">
+            <span>Stone Oak, SA</span>
+            <span>220 sqft</span>
+            <span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </div>
+      </div>
       <div class="portfolio-card reveal reveal-delay-1">
-        <div class="portfolio-img">
-          <div class="portfolio-gradient g1" style="position:absolute;inset:0"></div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-view">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View Project
-            </div>
-            <div class="portfolio-title">Master Bath Remodel</div>
-            <div class="portfolio-meta">Stone Oak, SA &bull; 320 sqft</div>
-            <div class="portfolio-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</div>
+        <div class="pc-bg"></div>
+        <div class="pc-pattern"></div>
+        <div class="pc-overlay"></div>
+        <div class="pc-cta">View Project &rarr;</div>
+        <div class="pc-content">
+          <div class="pc-title">Herringbone Floor Install</div>
+          <div class="pc-meta">
+            <span>Alamo Heights, SA</span>
+            <span>480 sqft</span>
+            <span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           </div>
         </div>
       </div>
       <div class="portfolio-card reveal reveal-delay-2">
-        <div class="portfolio-img">
-          <div class="portfolio-gradient g2" style="position:absolute;inset:0"></div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-view">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View Project
-            </div>
-            <div class="portfolio-title">Herringbone Floor Install</div>
-            <div class="portfolio-meta">Alamo Heights &bull; 480 sqft</div>
-            <div class="portfolio-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</div>
+        <div class="pc-bg"></div>
+        <div class="pc-pattern"></div>
+        <div class="pc-overlay"></div>
+        <div class="pc-cta">View Project &rarr;</div>
+        <div class="pc-content">
+          <div class="pc-title">Backsplash Design</div>
+          <div class="pc-meta">
+            <span>Boerne, TX</span>
+            <span>85 sqft</span>
+            <span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="pc-bg"></div>
+        <div class="pc-pattern"></div>
+        <div class="pc-overlay"></div>
+        <div class="pc-cta">View Project &rarr;</div>
+        <div class="pc-content">
+          <div class="pc-title">Shower Surround</div>
+          <div class="pc-meta">
+            <span>Helotes, TX</span>
+            <span>140 sqft</span>
+            <span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="pc-bg"></div>
+        <div class="pc-pattern"></div>
+        <div class="pc-overlay"></div>
+        <div class="pc-cta">View Project &rarr;</div>
+        <div class="pc-content">
+          <div class="pc-title">Open Concept Kitchen</div>
+          <div class="pc-meta">
+            <span>Schertz, TX</span>
+            <span>310 sqft</span>
+            <span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           </div>
         </div>
       </div>
       <div class="portfolio-card reveal reveal-delay-3">
-        <div class="portfolio-img">
-          <div class="portfolio-gradient g3" style="position:absolute;inset:0"></div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-view">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View Project
-            </div>
-            <div class="portfolio-title">Backsplash Design</div>
-            <div class="portfolio-meta">Helotes &bull; 120 sqft</div>
-            <div class="portfolio-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card reveal reveal-delay-4">
-        <div class="portfolio-img">
-          <div class="portfolio-gradient g4" style="position:absolute;inset:0"></div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-view">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View Project
-            </div>
-            <div class="portfolio-title">Shower Surround</div>
-            <div class="portfolio-meta">Dominion &bull; 200 sqft</div>
-            <div class="portfolio-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 4.9</div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card reveal reveal-delay-5">
-        <div class="portfolio-img">
-          <div class="portfolio-gradient g5" style="position:absolute;inset:0"></div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-view">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View Project
-            </div>
-            <div class="portfolio-title">Open Concept Kitchen</div>
-            <div class="portfolio-meta">Boerne &bull; 560 sqft</div>
-            <div class="portfolio-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card reveal reveal-delay-5">
-        <div class="portfolio-img">
-          <div class="portfolio-gradient g6" style="position:absolute;inset:0"></div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-view">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View Project
-            </div>
-            <div class="portfolio-title">Commercial Lobby</div>
-            <div class="portfolio-meta">Downtown SA &bull; 1,200 sqft</div>
-            <div class="portfolio-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</div>
+        <div class="pc-bg"></div>
+        <div class="pc-pattern"></div>
+        <div class="pc-overlay"></div>
+        <div class="pc-cta">View Project &rarr;</div>
+        <div class="pc-content">
+          <div class="pc-title">Commercial Lobby</div>
+          <div class="pc-meta">
+            <span>Downtown, SA</span>
+            <span>950 sqft</span>
+            <span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           </div>
         </div>
       </div>
@@ -509,112 +536,101 @@ nav .nav-cta .btn-primary{display:none}
 <!-- SERVICES -->
 <section class="services-section" id="services">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Every Surface, Perfected</h2>
-      <p class="section-sub">From intricate backsplashes to full bathroom transformations — we handle every detail.</p>
+    <div style="max-width:600px">
+      <div class="section-label reveal">Services</div>
+      <h2 class="section-h2 reveal reveal-delay-1">Full-Scope Tile &amp; Remodeling</h2>
+      <p class="section-sub reveal reveal-delay-2">From design consultation to final grout seal — every detail handled with craft and care.</p>
     </div>
     <div class="bento-grid">
-      <div class="bento-large reveal">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <!-- Large card -->
+      <div class="bento-card bento-large reveal">
+        <div>
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="bento-h3">Bathroom Remodeling</div>
+          <p class="bento-p">Complete bathroom transformations — from concept to completion. Tile work, shower surrounds, flooring, fixtures, and waterproofing. Your dream bath, flawlessly executed.</p>
+          <div class="bento-price">Starting at $3,500</div>
+          <a href="#" onclick="openModal();return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Get a Quote &rarr;</a>
         </div>
-        <div class="service-name">Bathroom Remodeling</div>
-        <div class="service-desc">Complete bathroom transformations from concept to completion. Walk-in showers, freestanding tubs, heated floors, and custom tilework that turns your bathroom into a personal spa retreat.</div>
-        <span class="service-tag">Most Popular &rarr;</span>
+        <div class="bento-large-visual">
+          <div class="bento-large-visual-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="6" height="6" rx="0.5"/><rect x="9" y="2" width="6" height="6" rx="0.5"/><rect x="16" y="2" width="6" height="6" rx="0.5"/><rect x="2" y="9" width="6" height="6" rx="0.5"/><rect x="9" y="9" width="6" height="6" rx="0.5"/><rect x="16" y="9" width="6" height="6" rx="0.5"/><rect x="2" y="16" width="6" height="6" rx="0.5"/><rect x="9" y="16" width="6" height="6" rx="0.5"/><rect x="16" y="16" width="6" height="6" rx="0.5"/></svg>
+          </div>
+        </div>
       </div>
-      <div class="bento-small reveal reveal-delay-1">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div class="service-name">Tile Installation</div>
-        <div class="service-desc">Precision installation for any tile type — ceramic, porcelain, natural stone, glass, and more.</div>
+      <!-- Small cards -->
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="bento-h3">Tile Installation</div>
+        <p class="bento-p">Floors, walls, backsplashes — any tile, any pattern. Precision layout, perfect grout lines.</p>
+        <div class="bento-price">From $8/sqft</div>
       </div>
-      <div class="bento-small reveal reveal-delay-2">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="service-name">Flooring</div>
-        <div class="service-desc">Luxury vinyl plank, hardwood, tile, and stone flooring installed flawlessly throughout your home.</div>
+      <div class="bento-card reveal reveal-delay-2">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></div>
+        <div class="bento-h3">Shower Surrounds</div>
+        <p class="bento-p">Fully waterproofed shower enclosures with premium tile systems and custom niches.</p>
+        <div class="bento-price">From $2,800</div>
       </div>
-      <div class="bento-small reveal reveal-delay-3">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
-        <div class="service-name">Kitchen Remodeling</div>
-        <div class="service-desc">Backsplashes, countertops, floors — complete kitchen tile transformations.</div>
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-7 8 7v10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <div class="bento-h3">Kitchen Remodeling</div>
+        <p class="bento-p">Backsplash design and installation, floor tile, countertops, and full kitchen remodels.</p>
+        <div class="bento-price">From $5,000</div>
       </div>
-      <div class="bento-small reveal reveal-delay-4">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="service-name">Shower Surrounds</div>
-        <div class="service-desc">Waterproof, beautiful shower surrounds built to last decades — zero grout cracking guaranteed.</div>
+      <div class="bento-card reveal reveal-delay-2">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="bento-h3">Flooring</div>
+        <p class="bento-p">Porcelain, ceramic, stone, and large-format tile flooring for any room or space.</p>
+        <div class="bento-price">From $6/sqft</div>
       </div>
-      <div class="bento-small reveal reveal-delay-5">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="service-name">Commercial Projects</div>
-        <div class="service-desc">Large-scale commercial tile installation for offices, lobbies, restaurants, and retail spaces.</div>
+      <div class="bento-card reveal reveal-delay-3">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="bento-h3">Commercial Tile</div>
+        <p class="bento-p">Lobbies, restaurants, offices — large-scale commercial tile projects with no disruption.</p>
+        <div class="bento-price">Custom Quote</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section class="why-section" id="about">
+<section class="whyus-section" id="whyus">
   <div class="section-inner">
-    <div class="why-grid">
-      <div class="why-left reveal">
+    <div style="text-align:center;margin-bottom:0">
+      <div class="section-label reveal">Why Choose Us</div>
+      <h2 class="section-h2 reveal reveal-delay-1">Built on Trust,<br>Backed by Warranty</h2>
+    </div>
+    <div class="whyus-grid">
+      <div class="whyus-warranty reveal">
         <div class="warranty-badge">
-          <svg class="warranty-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="m9 12 2 2 4-4" stroke-width="2"/>
-          </svg>
-          <div class="warranty-title">5-Year Warranty</div>
-          <div class="warranty-sub">Industry-leading coverage on all installations</div>
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="warranty-num">5</div>
+          <div class="warranty-txt">Year Warranty</div>
         </div>
-        <div class="why-points">
-          <div class="why-point">
-            <div class="why-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <div class="why-text"><h4>Licensed &amp; Fully Insured</h4><p>$2M liability coverage — your property is protected</p></div>
-          </div>
-          <div class="why-point">
-            <div class="why-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div class="why-text"><h4>Same-Week Start</h4><p>We respect your schedule and timeline</p></div>
-          </div>
-          <div class="why-point">
-            <div class="why-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-            <div class="why-text"><h4>Transparent Pricing</h4><p>No surprise charges — detailed written quotes</p></div>
-          </div>
-          <div class="why-point">
-            <div class="why-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <div class="why-text"><h4>4.9&#9733; Rated</h4><p>Hundreds of 5-star reviews across Google &amp; Yelp</p></div>
-          </div>
-        </div>
+        <p class="warranty-desc">Every project we complete is backed by our industry-leading 5-year workmanship warranty. If something isn't right, we make it right — no questions asked.</p>
+        <a href="#" onclick="openModal();return false;" class="btn-primary">Claim Your Estimate &rarr;</a>
       </div>
-      <div class="why-right reveal reveal-delay-2">
-        <div class="section-label">Why Choose Us</div>
-        <h2 class="why-title">Tile &amp; Remodeling Done<br>The Right Way</h2>
-        <p class="why-sub">We've built our reputation over 12+ years by treating every project like it's our own home. Our crews are trained craftsmen — not laborers — who take pride in every grout line, every tile, every finish.</p>
-        <div class="why-numbers">
-          <div class="why-num-card">
-            <div class="why-num-val">800+</div>
-            <div class="why-num-label">Projects Done</div>
-          </div>
-          <div class="why-num-card">
-            <div class="why-num-val">12+</div>
-            <div class="why-num-label">Years Active</div>
-          </div>
-          <div class="why-num-card">
-            <div class="why-num-val">4.9★</div>
-            <div class="why-num-label">Avg Rating</div>
-          </div>
-          <div class="why-num-card">
-            <div class="why-num-val">100%</div>
-            <div class="why-num-label">Satisfaction</div>
-          </div>
+      <div class="whyus-list reveal reveal-delay-1">
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <div class="why-content"><h4>Licensed &amp; Fully Insured</h4><p>Texas-licensed contractor with full liability and workers' comp coverage on every job.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="why-content"><h4>Same-Week Start Available</h4><p>We respect your schedule. Most projects begin within 5 business days of estimate approval.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="why-content"><h4>Expert, Dedicated Crew</h4><p>Skilled tradespeople — not day labor. The same crew that quotes is the crew that installs.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="why-content"><h4>Quality Materials Only</h4><p>We source premium tile and waterproofing systems — no shortcuts, no compromises on material quality.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.52 11 19.79 19.79 0 011.43 2.36a2 2 0 012-.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.4a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.46 2.36z"/></svg></div>
+          <div class="why-content"><h4>Responsive Communication</h4><p>Real humans answer the phone. Project updates at every stage, no chasing required.</p></div>
         </div>
       </div>
     </div>
@@ -622,37 +638,33 @@ nav .nav-cta .btn-primary{display:none}
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="how-section" id="process">
+<section class="howitworks-section" id="howitworks">
   <div class="section-inner">
-    <div class="section-header reveal" style="text-align:center;max-width:560px;margin:0 auto 0">
-      <div class="section-label">Our Process</div>
-      <h2 class="section-title">Simple. Transparent. Done Right.</h2>
-      <p class="section-sub">From your first call to the final reveal — we make the process seamless.</p>
+    <div style="text-align:center;margin-bottom:0">
+      <div class="section-label reveal">Our Process</div>
+      <h2 class="section-h2 reveal reveal-delay-1">Simple, Transparent,<br>Stress-Free</h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin:0 auto 3rem">From first call to final reveal — three steps to your transformed space.</p>
     </div>
     <div class="steps-row">
-      <svg class="step-connector" viewBox="0 0 800 4" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <line class="step-connector-line" x1="0" y1="2" x2="800" y2="2"/>
-      </svg>
-      <div class="step reveal reveal-delay-1">
+      <div class="steps-connector">
+        <svg width="100%" height="2" viewBox="0 0 100 2" preserveAspectRatio="none">
+          <line x1="0" y1="1" x2="100" y2="1" class="step-line" stroke="rgba(34,197,94,0.35)" stroke-width="2" stroke-dasharray="8 4"/>
+        </svg>
+      </div>
+      <div class="step-card reveal">
         <div class="step-num">1</div>
-        <div class="step-card">
-          <div class="step-title">Free On-Site Estimate</div>
-          <div class="step-desc">We visit your space, take precise measurements, discuss your vision, and deliver a detailed written quote — at no cost to you.</div>
-        </div>
+        <h3 class="step-h3">Free On-Site Estimate</h3>
+        <p class="step-p">We visit your space, take measurements, discuss your vision, and provide a detailed written estimate — all at no charge.</p>
       </div>
-      <div class="step reveal reveal-delay-2">
+      <div class="step-card reveal reveal-delay-1">
         <div class="step-num">2</div>
-        <div class="step-card">
-          <div class="step-title">Design &amp; Material Selection</div>
-          <div class="step-desc">Choose from hundreds of tile styles, patterns, and finishes. Our team helps you nail the perfect look and feel for your space.</div>
-        </div>
+        <h3 class="step-h3">Design &amp; Material Selection</h3>
+        <p class="step-p">We guide you through tile selection, layout patterns, and grout colors. You get a visual plan before a single tile is set.</p>
       </div>
-      <div class="step reveal reveal-delay-3">
+      <div class="step-card reveal reveal-delay-2">
         <div class="step-num">3</div>
-        <div class="step-card">
-          <div class="step-title">Expert Installation</div>
-          <div class="step-desc">Our licensed craftsmen complete your project on schedule, clean up completely, and back all work with our 5-year warranty.</div>
-        </div>
+        <h3 class="step-h3">Flawless Installation</h3>
+        <p class="step-p">Our crew arrives on time, works cleanly, and completes your project to the highest standard — backed by our 5-year warranty.</p>
       </div>
     </div>
   </div>
@@ -661,59 +673,59 @@ nav .nav-cta .btn-primary{display:none}
 <!-- REVIEWS -->
 <section class="reviews-section" id="reviews">
   <div class="section-inner">
-    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 56px">
-      <div class="section-label">Testimonials</div>
-      <h2 class="section-title">What San Antonio<br>Homeowners Say</h2>
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="section-label reveal">Testimonials</div>
+      <h2 class="section-h2 reveal reveal-delay-1">San Antonio Homeowners<br>Love the Results</h2>
     </div>
     <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Pro Tiling transformed our outdated master bath into something out of a design magazine. The herringbone floor pattern is absolutely stunning. They finished ahead of schedule and left the place cleaner than they found it."</p>
+        <div class="review-author">
+          <div class="review-avatar av1">M</div>
+          <div>
+            <div class="review-name">Maria L.</div>
+            <div class="review-hood">Stone Oak, San Antonio</div>
+          </div>
+        </div>
+      </div>
       <div class="review-card reveal reveal-delay-1">
         <div class="review-stars">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="review-text">"Absolutely blown away by the quality. They redid our entire master bath — floor, shower surround, the works. Every tile is perfectly level. It looks like a luxury hotel. Would hire again without hesitation."</p>
+        <p class="review-text">"Best contractor experience I've ever had — and I've been through several remodels. Transparent pricing, no hidden fees, and the quality of their tile work is extraordinary. The 5-year warranty sealed the deal."</p>
         <div class="review-author">
-          <div class="review-avatar" style="background:linear-gradient(135deg,#1e40af,#3b82f6)">MR</div>
+          <div class="review-avatar av2">J</div>
           <div>
-            <div class="review-name">Michael R.</div>
-            <div class="review-loc">Stone Oak, San Antonio</div>
+            <div class="review-name">James R.</div>
+            <div class="review-hood">Alamo Heights, San Antonio</div>
           </div>
         </div>
       </div>
       <div class="review-card reveal reveal-delay-2">
         <div class="review-stars">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="review-text">"They laid herringbone tile through our entire first floor — 1,800 sqft. Finished in 4 days, perfect pattern alignment, not a single crooked tile. Neighbors keep asking who did our floors. 10/10 recommend."</p>
+        <p class="review-text">"They did our restaurant lobby tile and I couldn't be happier. The geometric pattern they designed was unique, and they worked nights to avoid disrupting business. Absolute professionals."</p>
         <div class="review-author">
-          <div class="review-avatar" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">JL</div>
+          <div class="review-avatar av3">D</div>
           <div>
-            <div class="review-name">Jennifer L.</div>
-            <div class="review-loc">Alamo Heights, San Antonio</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card reveal reveal-delay-3">
-        <div class="review-stars">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="review-text">"Had 3 quotes. Pro Tiling wasn't the cheapest but they were clearly the most professional. The attention to detail in our shower surround is unreal. Zero leaks 2 years later. The 5-year warranty gave us peace of mind."</p>
-        <div class="review-author">
-          <div class="review-avatar" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)">DT</div>
-          <div>
-            <div class="review-name">David T.</div>
-            <div class="review-loc">The Dominion, San Antonio</div>
+            <div class="review-name">Diana C.</div>
+            <div class="review-hood">Downtown, San Antonio</div>
           </div>
         </div>
       </div>
@@ -724,78 +736,83 @@ nav .nav-cta .btn-primary{display:none}
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">Transparent Pricing,<br>No Surprises</h2>
-      <p class="section-sub">Honest, upfront pricing ranges — final quotes after a free on-site consultation.</p>
+    <div style="max-width:600px;margin-bottom:3rem">
+      <div class="section-label reveal">Transparent Pricing</div>
+      <h2 class="section-h2 reveal reveal-delay-1">No Surprises. Ever.</h2>
+      <p class="section-sub reveal reveal-delay-2">We believe in total price transparency. Here's what most projects look like — your free on-site estimate is exact and binding.</p>
     </div>
-    <div class="pricing-grid">
-      <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-header">
-          <h3>Service Price Guide</h3>
-          <p>All prices are starting ranges. Final quote after site visit.</p>
-        </div>
-        <div class="pricing-row">
-          <span class="pricing-service">Tile Installation</span>
-          <span class="pricing-range">From $8/sqft</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pricing-service">Bathroom Remodel</span>
-          <span class="pricing-range">From $3,500</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pricing-service">Kitchen Remodel</span>
-          <span class="pricing-range">From $5,000</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pricing-service">Flooring Install</span>
-          <span class="pricing-range">From $6/sqft</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pricing-service">Shower Surround</span>
-          <span class="pricing-range">From $2,800</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pricing-service">Commercial Projects</span>
-          <span class="pricing-range">Custom Quote</span>
-        </div>
+    <div class="pricing-table reveal">
+      <div class="pricing-row header">
+        <span>Service</span>
+        <span>Starting Price</span>
       </div>
-      <div class="pricing-right reveal reveal-delay-2">
-        <div class="estimate-card">
-          <svg class="estimate-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          <div class="estimate-title">Free On-Site Estimate</div>
-          <div class="estimate-sub">No commitment required. We visit your space, measure precisely, and deliver a detailed written quote — usually within 24 hours.</div>
-          <button class="btn-primary" onclick="openModal()" style="width:100%;justify-content:center">
-            Schedule Free Visit
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-service">Tile Installation</div>
+          <div class="pricing-service-desc">Floors, walls, backsplashes — per square foot</div>
         </div>
-        <div class="pricing-note">
-          <p><strong>All quotes include:</strong> Material recommendations, labor breakdown, timeline estimate, and our written 5-year warranty terms. We never charge for estimates or consultations.</p>
+        <div class="pricing-price">$8/sqft</div>
+      </div>
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-service">Bathroom Remodel</div>
+          <div class="pricing-service-desc">Full scope: demo, tile, fixtures, waterproofing</div>
         </div>
+        <div class="pricing-price">$3,500+</div>
+      </div>
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-service">Kitchen Remodel</div>
+          <div class="pricing-service-desc">Backsplash, floors, counters &amp; full remodel</div>
+        </div>
+        <div class="pricing-price">$5,000+</div>
+      </div>
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-service">Flooring</div>
+          <div class="pricing-service-desc">Porcelain, ceramic, stone &amp; large-format tile</div>
+        </div>
+        <div class="pricing-price">$6/sqft</div>
+      </div>
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-service">Shower Surround</div>
+          <div class="pricing-service-desc">Fully waterproofed, tiled enclosure with niche</div>
+        </div>
+        <div class="pricing-price">$2,800+</div>
+      </div>
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-service">Commercial Projects</div>
+          <div class="pricing-service-desc">Lobbies, restaurants, offices — any scale</div>
+        </div>
+        <div class="pricing-price">Custom</div>
+      </div>
+      <div class="pricing-cta-row">
+        <div class="pricing-cta-text"><strong>Free on-site estimate</strong> — exact, binding quote with no hidden fees or surprises.</div>
+        <a href="#" onclick="openModal();return false;" class="btn-primary">Schedule Free Estimate &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-blob1"></div>
+<!-- CTA SECTION -->
+<section class="cta-section" id="contact">
+  <div class="cta-aurora">
+    <div class="cta-blob-1"></div>
+    <div class="cta-blob-2"></div>
+  </div>
   <div class="cta-inner reveal">
-    <div class="section-label" style="text-align:center;margin-bottom:20px">Ready to Start?</div>
-    <h2 class="cta-title">Your Dream Space Is<br><em>One Call Away</em></h2>
-    <p class="cta-sub">Join 800+ San Antonio homeowners who trusted Pro Tiling &amp; Remodeling to transform their spaces. Free estimate, same-week start, 5-year warranty.</p>
-    <button class="btn-primary" onclick="openModal()" style="font-size:16px;padding:16px 36px">
-      Get My Free Estimate
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
-    <a href="tel:+12101234567" class="cta-phone">(210) 123-4567</a>
-    <p class="cta-legal">Licensed &bull; Insured &bull; BBB Accredited &bull; San Antonio, TX</p>
+    <div class="section-label" style="text-align:center">Ready to Start?</div>
+    <h2 class="cta-h2">Your Dream Space is<br>One Call <em>Away</em></h2>
+    <p class="cta-sub">Book your free on-site estimate today. No pressure, no obligation — just honest expertise and a clear path to your transformed space.</p>
+    <div class="cta-actions">
+      <a href="#" onclick="openModal();return false;" class="btn-primary" style="font-size:1.05rem;padding:1rem 2.25rem">Get My Free Estimate &rarr;</a>
+      <a href="tel:+12105550188" class="cta-phone">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.52 11 19.79 19.79 0 011.43 2.36a2 2 0 012-.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.4a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.46 2.36z"/></svg>
+        (210) 555-0188
+      </a>
+    </div>
   </div>
 </section>
 
@@ -803,349 +820,312 @@ nav .nav-cta .btn-primary{display:none}
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Pro<span>Tiling</span> &amp; Remodeling</div>
-        <p class="footer-tagline">San Antonio's premier tile installation and remodeling specialists. Serving the greater San Antonio area since 2012.</p>
-        <div class="footer-contact">
-          <a href="tel:+12101234567">(210) 123-4567</a>
-          <a href="mailto:info@protilingsa.com">info@protilingsa.com</a>
-          <a href="#">San Antonio, TX 78201</a>
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <div class="nav-logo-text">Pro Tiling &amp; <span>Remodeling</span></div>
         </div>
+        <p>San Antonio's trusted tile installation and remodeling specialists. Quality craftsmanship, transparent pricing, and a 5-year workmanship warranty on every project.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
+          <li><a href="#services">Bathroom Remodeling</a></li>
           <li><a href="#services">Tile Installation</a></li>
-          <li><a href="#services">Bathroom Remodel</a></li>
-          <li><a href="#services">Kitchen Remodel</a></li>
-          <li><a href="#services">Flooring</a></li>
           <li><a href="#services">Shower Surrounds</a></li>
-          <li><a href="#services">Commercial</a></li>
+          <li><a href="#services">Kitchen Remodeling</a></li>
+          <li><a href="#services">Flooring</a></li>
+          <li><a href="#services">Commercial Tile</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#about">About Us</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#whyus">Why Choose Us</a></li>
+          <li><a href="#howitworks">Our Process</a></li>
           <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#process">Our Process</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#" onclick="openModal();return false;">Free Estimate</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Service Areas</h4>
-        <ul>
-          <li><a href="#">Stone Oak</a></li>
-          <li><a href="#">Alamo Heights</a></li>
-          <li><a href="#">The Dominion</a></li>
-          <li><a href="#">Helotes</a></li>
-          <li><a href="#">Boerne</a></li>
-          <li><a href="#">New Braunfels</a></li>
-        </ul>
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.52 11 19.79 19.79 0 011.43 2.36a2 2 0 012-.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.4a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.46 2.36z"/></svg>
+          (210) 555-0188
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@proteamtiling.com
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          San Antonio, TX &amp; Surrounding Areas
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Mon–Sat: 7am – 6pm
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2025 Pro Tiling &amp; Remodeling. All rights reserved.</div>
-      <div class="footer-badge">
-        <div class="footer-badge-dot"></div>
-        Licensed &amp; Insured in Texas
+      <p>&copy; 2024 Pro Tiling &amp; Remodeling. All rights reserved.</p>
+      <div class="footer-badges">
+        <div class="footer-badge">Licensed &amp; Insured</div>
+        <div class="footer-badge">5-Year Warranty</div>
+        <div class="footer-badge">BBB Accredited</div>
+        <div class="footer-badge">TCST Certified</div>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- MODAL -->
-<div class="modal-backdrop" id="modalBackdrop" onclick="handleBackdropClick(event)">
-  <div class="modal">
-    <div class="modal-header">
-      <div>
-        <div class="modal-title">Get Your Free Estimate</div>
-        <div class="modal-sub">No commitment &bull; Same-week response guaranteed</div>
-      </div>
-      <button class="modal-close" onclick="closeModal()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-steps">
-        <div class="modal-step active" id="mstep1"></div>
-        <div class="modal-step" id="mstep2"></div>
-        <div class="modal-step" id="mstep3"></div>
-      </div>
-      <form id="estimateForm" onsubmit="return false;">
-        <!-- HONEYPOT -->
-        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
-        
-        <!-- STEP 1 -->
-        <div class="form-step active" id="step1">
-          <div class="form-group">
-            <label>What service do you need?</label>
-            <select name="service" id="serviceSelect" required>
-              <option value="">Select a service...</option>
-              <option value="tile">Tile Installation (from $8/sqft)</option>
-              <option value="bathroom">Bathroom Remodel (from $3,500)</option>
-              <option value="kitchen">Kitchen Remodel (from $5,000)</option>
-              <option value="flooring">Flooring (from $6/sqft)</option>
-              <option value="shower">Shower Surround (from $2,800)</option>
-              <option value="commercial">Commercial (Custom Quote)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Approximate square footage</label>
-            <select name="sqft">
-              <option value="">Not sure yet</option>
-              <option value="under100">Under 100 sqft</option>
-              <option value="100-300">100 - 300 sqft</option>
-              <option value="300-600">300 - 600 sqft</option>
-              <option value="600-1000">600 - 1,000 sqft</option>
-              <option value="1000+">1,000+ sqft</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>When would you like to start?</label>
-            <select name="timeline">
-              <option value="asap">As soon as possible</option>
-              <option value="2weeks">Within 2 weeks</option>
-              <option value="month">Within a month</option>
-              <option value="planning">Just planning ahead</option>
-            </select>
-          </div>
-          <div class="modal-nav">
-            <span style="font-size:13px;color:rgba(255,255,255,0.35)">Step 1 of 3</span>
-            <button type="button" class="btn-primary" onclick="nextStep(1)" style="padding:10px 24px;font-size:14px">Next &rarr;</button>
-          </div>
-        </div>
-        
-        <!-- STEP 2 -->
-        <div class="form-step" id="step2">
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name *</label>
-              <input type="text" name="firstName" placeholder="John" required>
-            </div>
-            <div class="form-group">
-              <label>Last Name *</label>
-              <input type="text" name="lastName" placeholder="Smith">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" name="phone" placeholder="(210) 555-0100" required>
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="john@example.com">
-          </div>
-          <div class="form-group">
-            <label>Project Address / Neighborhood</label>
-            <input type="text" name="address" placeholder="Stone Oak, San Antonio TX">
-          </div>
-          <div class="modal-nav">
-            <button type="button" class="btn-outline" onclick="prevStep(2)" style="padding:10px 20px;font-size:14px">&larr; Back</button>
-            <button type="button" class="btn-primary" onclick="nextStep(2)" style="padding:10px 24px;font-size:14px">Next &rarr;</button>
-          </div>
-        </div>
-        
-        <!-- STEP 3 -->
-        <div class="form-step" id="step3">
-          <div class="form-group">
-            <label>Tell us about your project</label>
-            <textarea name="details" rows="5" placeholder="Describe your project — tile type preferences, existing conditions, special requests..."></textarea>
-          </div>
-          <div class="form-group">
-            <label>How did you hear about us?</label>
-            <select name="source">
-              <option value="">Select...</option>
-              <option>Google Search</option>
-              <option>Google Maps</option>
-              <option>Yelp</option>
-              <option>NextDoor</option>
-              <option>Friend / Family Referral</option>
-              <option>Facebook / Instagram</option>
-              <option>Yard Sign</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="modal-nav">
-            <button type="button" class="btn-outline" onclick="prevStep(3)" style="padding:10px 20px;font-size:14px">&larr; Back</button>
-            <button type="button" class="btn-primary" onclick="submitForm()" id="submitBtn" style="padding:10px 24px;font-size:14px">Submit Request</button>
-          </div>
-        </div>
-
-        <!-- SUCCESS -->
-        <div class="form-step" id="stepSuccess">
-          <div class="form-success">
-            <div class="form-success-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3>Request Received!</h3>
-            <p>Thank you — we'll reach out within a few hours to schedule your free on-site estimate. We look forward to transforming your space.</p>
-            <a href="tel:+12101234567" class="btn-primary" style="margin-top:24px;display:inline-flex;justify-content:center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 6.29 6.29l1.46-1.46a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Call Us Now
-            </a>
-          </div>
-        </div>
-      </form>
-    </div>
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal-bg"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <div id="modalContent"></div>
   </div>
 </div>
 
 <script>
-// --- TILE GRID ---
+// ── TILE MOSAIC ──
 (function(){
-  var grid = document.getElementById('tileGrid');
-  if(!grid) return;
-  var count = 48;
-  for(var i=0;i<count;i++){
-    var sq = document.createElement('div');
+  const mosaic = document.getElementById('tileMosaic');
+  if(!mosaic) return;
+  const total = 48;
+  for(let i=0;i<total;i++){
+    const sq = document.createElement('div');
     sq.className = 'tile-sq';
-    sq.style.animationDelay = (i * 40) + 'ms';
-    grid.appendChild(sq);
+    sq.style.animationDelay = (i * 0.04 + 0.5) + 's';
+    mosaic.appendChild(sq);
   }
 })();
 
-// --- INTERSECTION OBSERVER (reveal + count-up) ---
-var revealEls = document.querySelectorAll('.reveal');
-var revealed = new Set();
-var io = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting && !revealed.has(e.target)){
-      revealed.add(e.target);
-      e.target.classList.add('visible');
+// ── MOBILE MENU ──
+function toggleMobileMenu(){
+  const m = document.getElementById('mobileMenu');
+  m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+}
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').style.display = 'none';
+}
+
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>revealObs.observe(el));
+
+// ── COUNT-UP ──
+const statEls = document.querySelectorAll('.stat-num[data-target]');
+let statsAnimated = false;
+const statsObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !statsAnimated){
+      statsAnimated = true;
+      statEls.forEach(el=>{
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const decimal = parseInt(el.dataset.decimal||'0');
+        const span = el.querySelector('span');
+        const dur = 1800;
+        const start = performance.now();
+        const step = (now)=>{
+          const p = Math.min((now-start)/dur,1);
+          const ease = 1-Math.pow(1-p,3);
+          const val = target * ease;
+          span.textContent = decimal ? val.toFixed(decimal) : Math.floor(val);
+          el.innerHTML = (decimal ? val.toFixed(decimal) : Math.floor(val)) + suffix;
+          if(p<1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
     }
   });
-},{threshold:0.12});
-revealEls.forEach(function(el){io.observe(el);});
+},{threshold:0.3});
+const statsBar = document.querySelector('.stats-bar');
+if(statsBar) statsObs.observe(statsBar);
 
-// --- COUNT UP ---
-var countEls = document.querySelectorAll('[data-target]');
-var counted = new Set();
-var countIO = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting && !counted.has(e.target)){
-      counted.add(e.target);
-      var target = parseInt(e.target.dataset.target);
-      var span = e.target.querySelector('span');
-      var start = 0;
-      var dur = 1600;
-      var step = Math.ceil(target/60);
-      var interval = setInterval(function(){
-        start += step;
-        if(start >= target){start = target; clearInterval(interval);}
-        span.textContent = start;
-      }, dur/60);
-    }
-  });
-},{threshold:0.5});
-countEls.forEach(function(el){countIO.observe(el);});
+// ── MODAL ──
+let currentStep = 1;
+let lastSubmit = 0;
+const RATE_LIMIT_MS = 15000;
 
-// --- MODAL ---
-var lastSubmit = 0;
 function openModal(){
-  document.getElementById('modalBackdrop').classList.add('open');
+  currentStep = 1;
+  renderModal();
+  document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeModal(){
-  document.getElementById('modalBackdrop').classList.remove('open');
+  document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-function handleBackdropClick(e){
-  if(e.target === document.getElementById('modalBackdrop')) closeModal();
+function handleOverlayClick(e){
+  if(e.target === document.querySelector('.modal-bg')) closeModal();
 }
-document.addEventListener('keydown',function(e){if(e.key==='Escape') closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal();});
 
-function showStep(n){
-  ['step1','step2','step3','stepSuccess'].forEach(function(id,i){
-    var el = document.getElementById(id);
-    if(el) el.className = 'form-step' + (id==='step'+n||id===n?' active':'');
-  });
-  [1,2,3].forEach(function(i){
-    var ms = document.getElementById('mstep'+i);
-    if(ms) ms.className = 'modal-step' + (i<=n?' active':'');
-  });
-}
+function renderModal(){
+  const c = document.getElementById('modalContent');
+  const dots = [1,2,3].map(i=>`<div class="modal-step-dot${i<=currentStep?' active':''}"></div>`).join('');
 
-function nextStep(current){
-  if(current===1){
-    var svc = document.getElementById('serviceSelect').value;
-    if(!svc){alert('Please select a service.');return;}
-    document.getElementById('step1').className='form-step';
-    document.getElementById('step2').className='form-step active';
-    document.getElementById('mstep2').className='modal-step active';
-  } else if(current===2){
-    var phone = document.querySelector('[name=phone]').value;
-    var fname = document.querySelector('[name=firstName]').value;
-    if(!fname||!phone){alert('Please enter your name and phone number.');return;}
-    document.getElementById('step2').className='form-step';
-    document.getElementById('step3').className='form-step active';
-    document.getElementById('mstep3').className='modal-step active';
+  if(currentStep===1){
+    c.innerHTML = `
+      <div class="modal-progress">${dots}</div>
+      <h2 class="modal-h2" id="modalTitle">Get Your Free Estimate</h2>
+      <p class="modal-sub">Tell us about your project — takes about 60 seconds.</p>
+      <div class="form-row">
+        <div class="form-field"><label class="form-label">First Name *</label><input class="form-input" id="f_first" type="text" placeholder="Maria" autocomplete="given-name"></div>
+        <div class="form-field"><label class="form-label">Last Name *</label><input class="form-input" id="f_last" type="text" placeholder="Lopez" autocomplete="family-name"></div>
+      </div>
+      <div class="form-field"><label class="form-label">Email Address *</label><input class="form-input" id="f_email" type="email" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="form-field"><label class="form-label">Phone Number *</label><input class="form-input" id="f_phone" type="tel" placeholder="(210) 555-0100" autocomplete="tel"></div>
+      <div class="form-honeypot"><input tabindex="-1" autocomplete="off" id="f_honey" name="website"></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem" onclick="goStep2()">Next: Project Details &rarr;</button>
+      <p class="modal-note">No spam. No obligation. Just a free, honest estimate.</p>`;
+  } else if(currentStep===2){
+    c.innerHTML = `
+      <div class="modal-progress">${dots}</div>
+      <h2 class="modal-h2" id="modalTitle">Project Details</h2>
+      <p class="modal-sub">Help us understand what you're looking to accomplish.</p>
+      <div class="form-field">
+        <label class="form-label">Service Needed *</label>
+        <select class="form-select" id="f_service">
+          <option value="">Select a service...</option>
+          <option value="tile">Tile Installation ($8/sqft)</option>
+          <option value="bath">Bathroom Remodel ($3,500+)</option>
+          <option value="kitchen">Kitchen Remodel ($5,000+)</option>
+          <option value="floor">Flooring ($6/sqft)</option>
+          <option value="shower">Shower Surround ($2,800+)</option>
+          <option value="commercial">Commercial (Custom Quote)</option>
+        </select>
+      </div>
+      <div class="form-field"><label class="form-label">Project Address / Zip *</label><input class="form-input" id="f_address" type="text" placeholder="San Antonio, TX 78201"></div>
+      <div class="form-field">
+        <label class="form-label">Approximate Size</label>
+        <select class="form-select" id="f_size">
+          <option value="">Select approximate size...</option>
+          <option value="small">Under 100 sqft</option>
+          <option value="medium">100 – 300 sqft</option>
+          <option value="large">300 – 600 sqft</option>
+          <option value="xlarge">600+ sqft</option>
+          <option value="unsure">Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Ideal Start Date</label>
+        <select class="form-select" id="f_timeline">
+          <option value="">When would you like to start?</option>
+          <option value="asap">As soon as possible</option>
+          <option value="2weeks">Within 2 weeks</option>
+          <option value="month">Within a month</option>
+          <option value="planning">Just planning ahead</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:0.75rem;margin-top:0.5rem">
+        <button class="btn-ghost" style="flex:1;justify-content:center" onclick="currentStep=1;renderModal()">&larr; Back</button>
+        <button class="btn-primary" style="flex:2;justify-content:center" onclick="goStep3()">Review &amp; Submit &rarr;</button>
+      </div>`;
+  } else if(currentStep===3){
+    c.innerHTML = `
+      <div class="modal-progress">${dots}</div>
+      <h2 class="modal-h2" id="modalTitle">Almost Done!</h2>
+      <p class="modal-sub">Any additional details help us prepare before your estimate visit.</p>
+      <div class="form-field"><label class="form-label">Tell Us More (optional)</label><textarea class="form-textarea" id="f_notes" placeholder="Describe your project, current tile condition, style preferences, or anything else we should know..."></textarea></div>
+      <div class="form-field">
+        <label class="form-check"><input type="checkbox" id="f_consent" checked> I agree to be contacted about my project estimate.</label>
+      </div>
+      <div id="rateLimitMsg" class="rate-limit-msg">Please wait a moment before submitting again.</div>
+      <div style="display:flex;gap:0.75rem;margin-top:0.5rem">
+        <button class="btn-ghost" style="flex:1;justify-content:center" onclick="currentStep=2;renderModal()">&larr; Back</button>
+        <button class="btn-primary" id="submitBtn" style="flex:2;justify-content:center" onclick="submitForm()">Submit &rarr; Get My Estimate</button>
+      </div>
+      <p class="modal-note">We'll call or text within 1 business hour to schedule your free on-site visit.</p>`;
   }
 }
 
-function prevStep(current){
-  if(current===2){
-    document.getElementById('step2').className='form-step';
-    document.getElementById('step1').className='form-step active';
-    document.getElementById('mstep2').className='modal-step';
-  } else if(current===3){
-    document.getElementById('step3').className='form-step';
-    document.getElementById('step2').className='form-step active';
-    document.getElementById('mstep3').className='modal-step';
-  }
+// Store step 1 & 2 data across renders
+const formData = {};
+function goStep2(){
+  const first = document.getElementById('f_first').value.trim();
+  const last = document.getElementById('f_last').value.trim();
+  const email = document.getElementById('f_email').value.trim();
+  const phone = document.getElementById('f_phone').value.trim();
+  const honey = document.getElementById('f_honey').value.trim();
+  if(honey) return;
+  if(!first||!last||!email||!phone){ alert('Please fill in all required fields.'); return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ alert('Please enter a valid email address.'); return; }
+  formData.first=first; formData.last=last; formData.email=email; formData.phone=phone;
+  currentStep=2; renderModal();
 }
-
+function goStep3(){
+  const service = document.getElementById('f_service').value;
+  const address = document.getElementById('f_address').value.trim();
+  if(!service||!address){ alert('Please select a service and enter your address.'); return; }
+  formData.service=service; formData.address=address;
+  formData.size=document.getElementById('f_size').value;
+  formData.timeline=document.getElementById('f_timeline').value;
+  currentStep=3; renderModal();
+}
 function submitForm(){
-  // Honeypot check
-  var hp = document.querySelector('[name=website]').value;
-  if(hp) return;
-  // Rate limit
-  var now = Date.now();
-  if(now - lastSubmit < 15000){alert('Please wait a moment before submitting again.');return;}
-  lastSubmit = now;
-  
-  var btn = document.getElementById('submitBtn');
-  btn.textContent = 'Submitting...';
+  const now = Date.now();
+  if(now - lastSubmit < RATE_LIMIT_MS){
+    document.getElementById('rateLimitMsg').style.display='block';
+    return;
+  }
+  const notes = document.getElementById('f_notes').value.trim();
+  const consent = document.getElementById('f_consent').checked;
+  if(!consent){ alert('Please agree to be contacted.'); return; }
+  formData.notes=notes;
+
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
   btn.disabled = true;
-  
-  var form = document.getElementById('estimateForm');
-  var data = {
-    service: form.querySelector('[name=service]').value,
-    sqft: form.querySelector('[name=sqft]').value,
-    timeline: form.querySelector('[name=timeline]').value,
-    firstName: form.querySelector('[name=firstName]').value,
-    lastName: form.querySelector('[name=lastName]').value,
-    phone: form.querySelector('[name=phone]').value,
-    email: form.querySelector('[name=email]').value,
-    address: form.querySelector('[name=address]').value,
-    details: form.querySelector('[name=details]').value,
-    source: form.querySelector('[name=source]').value,
-    submittedAt: new Date().toISOString()
+  lastSubmit = now;
+
+  const payload = {
+    first_name: formData.first,
+    last_name: formData.last,
+    email: formData.email,
+    phone: formData.phone,
+    service: formData.service,
+    address: formData.address,
+    size: formData.size,
+    timeline: formData.timeline,
+    notes: formData.notes,
+    source: 'Pro Tiling Website',
+    submitted_at: new Date().toISOString()
   };
-  
+
   fetch('YOUR_GHL_WEBHOOK_URL', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify(data)
-  }).catch(function(){}).finally(function(){
-    document.getElementById('step3').className='form-step';
-    document.getElementById('stepSuccess').className='form-step active';
-    document.querySelector('.modal-steps').style.display='none';
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  }).catch(()=>{}).finally(()=>{
+    document.getElementById('modalContent').innerHTML = `
+      <div class="modal-success">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>You're All Set!</h3>
+        <p>Thanks, ${formData.first}! We'll reach out within 1 business hour to schedule your free on-site estimate. We look forward to transforming your space.</p>
+        <button class="btn-primary" style="margin-top:2rem;width:100%;justify-content:center" onclick="closeModal()">Close</button>
+      </div>`;
   });
 }
 
-// --- NAV SCROLL ---
-var navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function(){
-  if(window.scrollY > 50){
-    navbar.style.background='rgba(5,8,16,0.95)';
-    navbar.style.borderBottomColor='rgba(255,255,255,0.08)';
-  } else {
-    navbar.style.background='rgba(5,8,16,0.7)';
-    navbar.style.borderBottomColor='rgba(255,255,255,0.06)';
-  }
-}, {passive:true});
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  const nav = document.getElementById('navbar');
+  nav.style.background = window.scrollY > 40 ? 'rgba(5,8,16,0.95)' : 'rgba(5,8,16,0.7)';
+});
 </script>
 </body>
 </html>
